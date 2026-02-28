@@ -79,11 +79,6 @@ body {
   border-color: var(--green-line);
 }
 
-.action-btn.home {
-  background: #ffffff;
-  border-color: var(--yellow-line);
-}
-
 .list {
   padding: 32px 0 44px;
   text-align: left;
