@@ -1,0 +1,8 @@
+title: Algonous Blog
+description: Published writings from memory.
+url: "https://algonous.github.io"
+baseurl: "/blog"
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
