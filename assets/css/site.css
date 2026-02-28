@@ -1,0 +1,142 @@
+:root {
+  --text: #111111;
+  --muted: #8d8d8d;
+  --line: #e8e8e8;
+  --bg: #fffef8;
+  --link: #1f4aa8;
+
+  /* md2html-inspired semantic tones */
+  --green-bg: #f0fdf4;
+  --green-line: #22c55e;
+  --yellow-bg: #fefce8;
+  --yellow-line: #d97706;
+  --red-bg: #fef2f2;
+  --red-line: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.head-bar {
+  background: var(--yellow-bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.head-inner {
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-name {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  gap: 18px;
+}
+
+.action-btn {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 8px 12px;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.action-btn.rss {
+  background: var(--green-bg);
+  border-color: var(--green-line);
+}
+
+.action-btn.home {
+  background: #ffffff;
+  border-color: var(--yellow-line);
+}
+
+.list {
+  padding: 32px 0 44px;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item + .post-item {
+  margin-top: 14px;
+}
+
+.post-item:nth-child(odd) .post-row {
+  background: var(--green-bg);
+  border-color: var(--green-line);
+}
+
+.post-item:nth-child(even) .post-row {
+  background: var(--yellow-bg);
+  border-color: var(--yellow-line);
+}
+
+.post-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  text-decoration: none;
+  line-height: 1.5;
+  border-left: 4px solid transparent;
+  padding: 10px 14px;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.post-row:hover {
+  background: var(--red-bg);
+  border-color: var(--red-line);
+}
+
+.post-title {
+  color: var(--link);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .site-name {
+    font-size: 38px;
+  }
+
+  .head-inner {
+    height: 84px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+}
