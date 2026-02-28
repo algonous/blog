@@ -1,0 +1,141 @@
+---
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ site.title }}</title>
+    <style>
+      :root {
+        --text: #111111;
+        --muted: #8d8d8d;
+        --line: #ececec;
+        --bg: #ffffff;
+        --link: #1f4aa8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .head-bar {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .head-inner {
+        height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .site-name {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .actions {
+        display: flex;
+        gap: 18px;
+      }
+
+      .action-btn {
+        text-decoration: none;
+        color: var(--text);
+        font-size: 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 14px;
+      }
+
+      .list {
+        padding: 28px 0 40px;
+      }
+
+      .post-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .post-item + .post-item {
+        margin-top: 16px;
+      }
+
+      .post-row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        text-decoration: none;
+        line-height: 1.5;
+      }
+
+      .post-title {
+        color: var(--link);
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .post-date {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 720px) {
+        .site-name {
+          font-size: 34px;
+        }
+
+        .head-inner {
+          height: 72px;
+        }
+
+        .post-title {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head-bar">
+      <div class="wrap head-inner">
+        <a class="site-name" href="{{ '/' | relative_url }}">Algonous</a>
+        <nav class="actions">
+          <a class="action-btn" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+          <a class="action-btn" href="{{ '/' | relative_url }}">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap list">
+      <ul class="post-list">
+        {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+        {% for post in posts_sorted %}
+        <li class="post-item">
+          <a class="post-row" href="{{ post.url | relative_url }}">
+            <span class="post-title">{{ post.title }}</span>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </main>
+  </body>
+</html>
