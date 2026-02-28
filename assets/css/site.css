@@ -5,7 +5,6 @@
   --bg: #fffef8;
   --link: #1f4aa8;
 
-  /* md2html-inspired semantic tones */
   --green-bg: #f0fdf4;
   --green-line: #22c55e;
   --yellow-bg: #fefce8;
@@ -40,7 +39,9 @@ body {
   height: 108px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 18px;
+  flex-direction: row;
 }
 
 .site-name {
@@ -49,11 +50,13 @@ body {
   letter-spacing: -0.03em;
   text-decoration: none;
   color: var(--text);
+  line-height: 1;
 }
 
 .actions {
   display: flex;
-  gap: 18px;
+  gap: 12px;
+  margin-left: auto;
 }
 
 .action-btn {
@@ -78,6 +81,7 @@ body {
 
 .list {
   padding: 32px 0 44px;
+  text-align: left;
 }
 
 .post-list {
@@ -101,7 +105,7 @@ body {
 }
 
 .post-row {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   gap: 14px;
   text-decoration: none;
@@ -127,6 +131,44 @@ body {
   font-size: 13px;
 }
 
+.post-main {
+  padding: 36px 0 56px;
+}
+
+.post-main .post-header {
+  margin-bottom: 26px;
+  border-left: 4px solid var(--green-line);
+  background: var(--green-bg);
+  padding: 12px 14px;
+  display: inline-block;
+}
+
+.post-main h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.post-main .meta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.post-main .content {
+  font-size: 18px;
+  line-height: 1.9;
+  max-width: 860px;
+}
+
+.post-main .content p {
+  margin: 0 0 1.1em;
+}
+
+.post-main .content a {
+  color: var(--link);
+}
+
 @media (max-width: 720px) {
   .site-name {
     font-size: 38px;
@@ -138,5 +180,13 @@ body {
 
   .post-title {
     font-size: 20px;
+  }
+
+  .post-main h1 {
+    font-size: 32px;
+  }
+
+  .post-main .content {
+    font-size: 17px;
   }
 }

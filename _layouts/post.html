@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  </head>
+  <body>
+    <header class="head-bar">
+      <div class="wrap head-inner">
+        <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="actions">
+          <a class="action-btn rss" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+          <a class="action-btn home" href="{{ '/' | relative_url }}">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap post-main">
+      <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <div class="meta">{{ page.date | date: "%Y-%m-%d" }}</div>
+      </header>
+      <article class="content">
+        {{ content }}
+      </article>
+    </main>
+  </body>
+</html>
