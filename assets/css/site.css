@@ -12,6 +12,7 @@
   --red-bg: #fef2f2;
   --red-line: #ef4444;
   --left-rail: 28px;
+  --title-optical-shift: -18px;
 }
 
 * {
@@ -52,7 +53,9 @@ body {
   text-decoration: none;
   color: var(--text);
   line-height: 1;
+  display: inline-block;
   margin-left: var(--left-rail);
+  transform: translateX(var(--title-optical-shift));
 }
 
 .actions {
@@ -176,6 +179,7 @@ body {
 @media (max-width: 720px) {
   :root {
     --left-rail: 10px;
+    --title-optical-shift: -8px;
   }
 
   .site-name {
