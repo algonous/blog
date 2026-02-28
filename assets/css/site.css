@@ -105,12 +105,12 @@ body {
 }
 
 .post-item:nth-child(even) .post-row {
-  background: var(--yellow-bg);
+  background: #fff7ed;
   border-color: var(--yellow-line);
 }
 
 .post-row {
-  display: inline-flex;
+  display: flex;
   align-items: baseline;
   gap: 14px;
   text-decoration: none;
@@ -142,11 +142,21 @@ body {
 
 .post-main .post-header {
   margin-bottom: 26px;
-  border-left: 4px solid var(--green-line);
-  background: var(--green-bg);
+  border-left: 4px solid transparent;
+  background: transparent;
   padding: 12px 14px;
-  display: inline-block;
+  display: block;
   margin-left: var(--left-rail);
+}
+
+.post-main .post-header.color-odd {
+  background: var(--green-bg);
+  border-color: var(--green-line);
+}
+
+.post-main .post-header.color-even {
+  background: #fff7ed;
+  border-color: var(--yellow-line);
 }
 
 .post-main h1 {
