@@ -4,7 +4,7 @@ date: 2026-02-27
 status: published
 ---
 
-I write promts for agents everyday - lots of them.
+I write prompts for agents everyday - lots of them.
 
 But I've never written any prompts for myself, and that doesn't feel right.
 
